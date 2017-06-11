@@ -21,6 +21,7 @@ buildscript {
         designVersion = '25.1.1'
         recyclerViewVersion = '25.1.1'
         constraintLayoutVersion = '1.0.2'
+        cardViewVersion = '25.1.1'
 
         streamVersion = '1.1.5'
 

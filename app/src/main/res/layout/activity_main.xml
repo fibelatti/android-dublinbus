@@ -9,7 +9,7 @@
     android:background="@color/colorWhiteOpaque"
     android:fitsSystemWindows="true"
     android:focusableInTouchMode="true"
-    tools:context="com.fibelatti.dublinbus.MainActivity">
+    tools:context="com.fibelatti.dublinbus.presentation.activities.MainActivity">
 
     <include layout="@layout/toolbar_default"/>
 
@@ -18,14 +18,89 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view_by_stop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/card_margin"
+            android:background="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_vertical"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/card_view_favourites"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_small">
+
+                <ImageView
+                    android:id="@+id/image_view_by_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/margin_small"
+                    android:src="@drawable/ic_place_white_36dp"
+                    android:tint="@color/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/text_view_by_stop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_view_by_stop"
+                    android:gravity="center"
+                    android:text="@string/main_activity_search_by_stop_number"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/text_size_regular"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view_favourites"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/card_margin"
+            android:background="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_vertical"
+            app:layout_constraintLeft_toRightOf="@+id/card_view_by_stop"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_small">
+
+                <ImageView
+                    android:id="@+id/image_view_favourites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/margin_small"
+                    android:src="@drawable/ic_star_white_36dp"
+                    android:tint="@color/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/text_view_favourites"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_view_favourites"
+                    android:gravity="center"
+                    android:text="@string/main_activity_favourites"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/text_size_regular"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
 
     </android.support.constraint.ConstraintLayout>
 

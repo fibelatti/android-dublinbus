@@ -15,8 +15,31 @@
     <string name="hint_search">Search</string>
     <string name="hint_back">Navigate back</string>
     <string name="hint_try_again">Try again</string>
+    <string name="hint_loading">Loading</string>
 
     <string name="generic_log_error">Error in %1$s (%2$s)</string>
 
     <string name="generic_msg_error">Oops! Something went wrong. Please try again.</string>
+
+    <!-- MainActivity -->
+    <string name="main_activity_title">Dublin Bus Information</string>
+    <string name="main_activity_search_by_stop_number">Search by stop number</string>
+    <string name="main_activity_favourites">Favourites</string>
+
+    <!-- SearchActivity -->
+    <string name="search_activity_title">Search by stop number</string>
+    <string name="search_activity_action_search">Search</string>
+    <string name="search_activity_action_refresh">Refresh</string>
+    <string name="search_activity_action_favorite">Save to favorites</string>
+    <string name="search_activity_text_stop_number">Stop number</string>
+    <string name="search_activity_text_refresh_time">Updated at %s</string>
+    <string name="search_activity_text_route">Route %s</string>
+    <plurals name="search_activity_text_eta">
+        <item quantity="one">Arriving in 1 minute</item>
+        <item quantity="other">Arriving in %s minutes</item>
+    </plurals>
+    <string name="search_activity_text_no_results">No results. Please check the stop number
+        \nor try refreshing in a couple minutes.</string>
+    <string name="search_activity_error_stop_number">Please enter a valid stop number.</string>
+
 </resources>
