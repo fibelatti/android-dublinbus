@@ -25,4 +25,9 @@
     <dimen name="clickable_area">40dp</dimen>
 
     <dimen name="divider_size">1dp</dimen>
+
+    <dimen name="card_margin">4dp</dimen>
+    <dimen name="card_radius">2dp</dimen>
+
+    <dimen name="search_adapter_route_item_guide">32dp</dimen>
 </resources>

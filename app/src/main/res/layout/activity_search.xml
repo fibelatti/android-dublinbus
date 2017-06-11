@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteOpaque"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true">
+
+    <include layout="@layout/toolbar_default"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_regular"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_stop_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:theme="@style/Custom.InputLayoutPrimary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/button_search"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/input_stop_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_activity_text_stop_number"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="4"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/text_size_regular"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/button_search"
+            android:layout_width="@dimen/clickable_area"
+            android:layout_height="@dimen/clickable_area"
+            android:background="@null"
+            android:contentDescription="@string/search_activity_action_search"
+            android:src="@drawable/ic_search_white_24dp"
+            android:text="@string/search_activity_action_search"
+            android:tint="@color/colorAccent"
+            app:layout_constraintLeft_toRightOf="@+id/input_layout_stop_id"
+            app:layout_constraintRight_toRightOf="@+id/button_favorite"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/button_favorite"
+            android:layout_width="@dimen/clickable_area"
+            android:layout_height="@dimen/clickable_area"
+            android:background="@null"
+            android:contentDescription="@string/search_activity_action_favorite"
+            android:src="@drawable/ic_star_border_white_24dp"
+            android:text="@string/search_activity_action_favorite"
+            android:tint="@color/colorAccent"
+            app:layout_constraintLeft_toRightOf="@+id/button_search"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_view_refresh_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textSecondary"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/button_refresh"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_stop_id"/>
+
+        <ImageButton
+            android:id="@+id/button_refresh"
+            android:layout_width="@dimen/clickable_area"
+            android:layout_height="@dimen/clickable_area"
+            android:background="@null"
+            android:contentDescription="@string/search_activity_action_refresh"
+            android:src="@drawable/ic_refresh_white_24dp"
+            android:text="@string/search_activity_action_refresh"
+            android:tint="@color/colorAccent"
+            app:layout_constraintLeft_toRightOf="@+id/text_view_refresh_time"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_stop_id"/>
+
+        <View
+            android:id="@+id/divider_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorGrayLight"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_refresh"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_recycler_view"/>
+
+        <RelativeLayout
+            android:id="@+id/placeholder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_recycler_view">
+
+            <ImageView
+                android:id="@+id/image_view_placeholder_bus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/margin_small"
+                android:src="@drawable/ic_directions_bus_white_24dp"
+                android:tint="@color/colorGray"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_view_placeholder_bus"
+                android:gravity="center"
+                android:text="@string/search_activity_text_no_results"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/text_size_regular"/>
+
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>
